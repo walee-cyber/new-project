@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     *{
+         margin:0;
+         padding: 0;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+              }
+    .container{
+        width: 100%;
+        height: 100vh;
+        /* border: 1px solid black; */
+        background-color: sandybrown;
+        background-size: 100% 100%;
+    }
+    
+    .time{
+        height:200px;
+        width:200px;
+        border-radius: 50%;
+        position: relative;
+        background-image:url("clock7.jpg");
+        background-size: 100% 100%;
+        width: 400px;
+        height: 400px;
+        left: 33%;
+        top: 10%;
+        
+    }
+    .h3{
+        position: absolute;
+        top: 40%;
+        left: 42%;
+        font-weight: 550;
+    }
+    .n1{
+        background: black;
+        width:35%;
+        height:3px;
+        position: absolute;
+        top:45.5%;
+        transform-origin: 100%;
+        left: 14.5%;
+        background-color: red;
+    }
+       .n2{
+        background: black;
+        width:35%;
+        height:3px;
+        position: absolute;
+        top:45.5%;
+        transform-origin: 100%;
+        left: 15%;
+        background-color: blue;
+    }
+    .n3{
+        background: black;
+        width:33%;
+        height:3px;
+        position: absolute;
+        top:45.5%;
+        transform-origin: 100%;
+        left: 17%;
+    }
+    .div1{
+        width: 100%;
+        height: 20vh;
+        /* border: 1px solid red; */
+        position: absolute;
+        top: 90%;
+    }
+    .h1{
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        background-color:black;
+    }
+    .sec2{
+        width: 10%;
+        height: 10%;
+        border: 1px solid black;
+        position: absolute;
+        left: 63%;
+        top: 40%;
+    }
+    .heading{
+        font-size: 30px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="time">
+        <div class="n1 sec"></div>
+        <div class="n2 min"></div>
+        <div class="n3 hour"></div>
+        <h3 class="h3">Waleed<br>Clock's<br> Pvt.LTD</h3>
+        <div class="div1">
+            <h1 class="h1">Waleed Clock's <br> Pvt.LTD</h1>
+        </div>
+        <div class="sec2">
+            <h3 class="heading">28</h3>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+setInterval(clock,1000)
+function clock(){
+var sec=document.querySelector(".sec");
+var date=new Date();
+var secs=date.getSeconds()
+var sec1=((secs/60)*360)+90
+sec.style.transform=`rotate(${sec1}deg)`
+
+var min=document.querySelector(".min");
+var mint=date.getMinutes()
+var mint1=((mint/60)*360)+90
+min.style.transform=`rotate(${mint1}deg)`
+
+
+var hr=document.querySelector(".hour");
+var hour=date.getHours()
+var hour1=((hour/12)*360)+90+(.5*mint)
+hr.style.transform=`rotate(${hour1}deg)`
+}
+var date=new Date().getDate()
+ document.querySelector(".heading").innerHTML=`${date}`
+</script>
+</html>
